@@ -1,0 +1,22 @@
+.search-container {
+    max-width: 100%; /* Adjust as needed */
+    background-color: lightblue; /* Center the container */
+  }
+  
+  .list-group {
+    max-height: 200px; /* Adjust as needed */
+    overflow-y: auto;
+  }
+  
+  .result-name {
+    cursor: pointer;
+    /* Add other styles as needed */
+  }
+  
+  /* Optional: Add some box-shadow for a subtle effect */
+  .search-container {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  

@@ -1,0 +1,71 @@
+<div class="d-flex justify-content-center" *ngIf="cv">
+  <div class="col-lg-8 push-lg-4">
+    <div class="tab-content p-b-3">
+      <div class="tab-pane active" id="profile">
+        <div class="d-flex justify-content-center">
+          <img
+            width="150px"
+            height="150px"
+            class="rounded-circle align-content-center"
+            src="assets/images/{{ cv.path | defaultImage }}"
+            alt=""
+          />
+        </div>
+        <h4 class="m-y-2 text-center mb-4">
+          Cv {{ cv.firstname }} {{ cv.name }}
+        </h4>
+        <div class="row card-body text-center">
+          <div class="col-md-12">
+            <h4 class="m-t-2 mb-4" style="font-size: 40px">
+              <span class="fa fa-clock-o ion-clock pull-xs-right"></span>
+              Informations
+            </h4>
+            <table
+              class="table table-hover table-striped"
+              style="font-size: 20px"
+            >
+              <tbody>
+                <tr>
+                  <td><strong>Name : </strong> {{ cv.name }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Firstname : </strong> {{ cv.firstname }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Job : </strong> {{ cv.job }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Age : </strong> {{ cv.age }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="d-flex justify-content-center">
+              <div class="row">
+                <div class="col-md-4">
+                  <button class="btn btn-primary" [routerLink]="['/cv']">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+                  </button>
+                </div>
+                <div class="col-md-4">
+                  <button
+                    class="btn btn-secondary mx-2"
+                    *ngIf="isLoggedIn$ | async"
+                    (click)="update()"
+                  >
+                    <i class="fas fa-edit"></i> Modify
+                  </button>
+                </div>
+                <div class="col-md-4" *ngIf="isLoggedIn$ | async">
+                  <button class="btn btn-danger" (click)="deleteCv()">
+                    <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div></div>
+</div>

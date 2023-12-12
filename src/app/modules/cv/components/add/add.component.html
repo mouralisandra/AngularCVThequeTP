@@ -1,0 +1,92 @@
+<h2 class="mt-3 text-center text-primary">Add a Cv</h2>
+<form *ngIf="addForm" [formGroup]="addForm">
+  <label>Name</label>
+  <input
+    required
+    id="name"
+    type="text"
+    formControlName="name"
+    class="form-control"
+  />
+  <div
+    class="alert alert-danger"
+    *ngIf="addForm.get('name')!.invalid && addForm.get('name')!.touched"
+  >
+    Name field can't be empty.
+  </div>
+
+  <label>FirstName</label>
+  <input
+    required
+    id="firstname"
+    type="text"
+    formControlName="firstname"
+    class="form-control"
+  />
+  <div
+    class="alert alert-danger"
+    *ngIf="
+      addForm.get('firstname')!.invalid && addForm.get('firstname')!.touched
+    "
+  >
+    FirstName field can't be empty.
+  </div>
+
+  <label>Job</label>
+  <input
+    required
+    id="job"
+    type="text"
+    formControlName="job"
+    class="form-control"
+  />
+  <div
+    class="alert alert-danger"
+    *ngIf="addForm.get('job')!.invalid && addForm.get('job')!.touched"
+  >
+    Job field can't be empty.
+  </div>
+
+  <label>Age</label>
+  <input
+    required
+    min="0"
+    max="70"
+    id="age"
+    type="number"
+    formControlName="age"
+    class="form-control"
+  />
+  <div
+    class="alert alert-danger"
+    *ngIf="addForm.get('age')!.invalid && addForm.get('age')!.touched"
+  >
+    Age must be between 0 and 70.
+  </div>
+
+  <label>cin</label>
+  <input
+    required
+    id="cin"
+    type="number"
+    formControlName="cin"
+    class="form-control"
+  />
+  <div
+    class="alert alert-danger"
+    *ngIf="addForm.get('cin')!.invalid && addForm.get('cin')!.touched"
+  >
+    cin field can't be empty.
+  </div>
+
+  <label>Path</label>
+  <input id="path" type="text" formControlName="path" class="form-control" />
+
+  <button
+    class="btn btn-primary mt-4"
+    [disabled]="addForm.invalid"
+    (click)="add(addForm.value)"
+  >
+    Submit
+  </button>
+</form>

@@ -1,0 +1,49 @@
+<div class="container mt-4">
+  <app-search (cvSelected)="onCvSelected($event)"></app-search>
+
+  <div class="alert alert-warning mt-3">
+    <h4 class="alert-heading">{{ date | date : "full" | uppercase }}</h4>
+    <p class="mb-0">
+      Nombre de CVs sélectionnés: {{ (embauches$ | async)?.length ?? 0 }}
+    </p>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-6 col-sm-12">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            [class.active]="seniorsActive"
+            (click)="showSeniors()"
+            >Seniors</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            (click)="showJuniors()"
+            [class.active]="juniorsActive"
+            >Juniors</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-6 col-sm-12">
+      <app-list (itemSelected)="onForwardCv($event)" [cvs]="content"></app-list>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <app-detail-cv [cv]="selectedCv"></app-detail-cv>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-12">
+      <app-embauche></app-embauche>
+    </div>
+  </div>
+</div>

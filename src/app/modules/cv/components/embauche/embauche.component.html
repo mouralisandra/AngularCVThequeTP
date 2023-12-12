@@ -1,0 +1,15 @@
+<ul *ngIf="cvs" class="list-group mt-3">
+  <h2>List of Hired Employees :</h2>
+  <li class="list-group-item" *ngFor="let cv of cvs">
+    <div>
+      <img
+        width="70px"
+        height="70px"
+        class="rounded-circle"
+        src="assets/images/{{ cv.path | defaultImage }}"
+        alt="{{ cv.name }}"
+      />
+      {{ cv.firstname | titlecase }} {{ cv.name | titlecase }}
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,9 @@
+<li *ngIf="cv" class="list-group-item"
+(click)="onSelectCv()"
+>
+    <img src="assets/images/{{cv.path |defaultImage}}" 
+    width="80px"
+    height="80px"
+    alt="{{ cv.name |titlecase}}">
+    {{ cv.firstname|titlecase }} {{ cv.name|titlecase }}
+</li>

@@ -1,0 +1,50 @@
+<h2 class="mt-3 mb-3 text-center text-secondary">
+  Some useful operators of the Observable pipable operator
+</h2>
+<div [formGroup]="Form" class="container mt-4">
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="input1" class="form-label">Input Stream 1:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="input1"
+        formControlName="input1"
+      />
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="input2" class="form-label">Input Stream 2:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="input2"
+        formControlName="input2"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <button class="btn btn-danger" (click)="terminate1()">
+        Terminate Stream 1
+      </button>
+    </div>
+    <div class="col-md-6 mb-3">
+      <button class="btn btn-danger" (click)="terminate2()">
+        Terminate Stream 2
+      </button>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <div class="p-2 border bg-light">Merge: {{ merge$ | async }}</div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-2 border bg-light">Scan: {{ scan$ | async }}</div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-2 border bg-light">Reduce: {{ reduce$ | async }}</div>
+    </div>
+  </div>
+</div>

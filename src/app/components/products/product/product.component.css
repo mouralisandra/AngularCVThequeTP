@@ -1,0 +1,11 @@
+.glass-container {
+  background: rgba(255, 255, 255, 0.1); /* Adjust the alpha value for transparency */
+  border: none;
+  backdrop-filter: blur(10px); /* Adjust the blur value based on your preference */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.glass-container:hover {
+  background: rgba(255, 255, 255, 0.2); /* Adjust the alpha value for transparency on hover */
+}

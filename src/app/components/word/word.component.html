@@ -1,0 +1,52 @@
+<div class="container mt-4">
+  <div class="row d-flex align-items-center">
+    <h3 class="text-center shadow-lg p-3 mb-5 bg-body rounded">1- Mini Word</h3>
+    <div class="col-md-6">
+      <p
+        [ngStyle]="{
+          color: color,
+          'font-size.px': size,
+          'font-family': fontFamily
+        }"
+        class="text-center"
+      >
+        "Life is short, and it's up to you to make it sweet."
+      </p>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="colorInput">Text Color:</label>
+        <input
+          type="color"
+          id="colorInput"
+          class="form-control"
+          [(ngModel)]="color"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="sizeInput">Font Size:</label>
+        <input
+          id="sizeInput"
+          class="form-control"
+          type="number"
+          [(ngModel)]="size"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="fonts">Choose a Font:</label>
+        <select
+          class="form-control"
+          id="fonts"
+          #sizeInput
+          (change)="onChangeSize(sizeInput.value)"
+        >
+          <option value="garamond">Garamond</option>
+          <option value="verdana">Verdana</option>
+          <option value="arial">Arial</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
