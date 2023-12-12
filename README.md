@@ -1,6 +1,7 @@
 # TPs Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
+* The authentification credentials are : admin@gmail.com and the password is 0000
+* the link to the project is : https://angular-cv-theque-yyjnuar39-mouralisandra.vercel.app/
 
 ## Development server
 
